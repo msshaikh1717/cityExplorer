@@ -13,22 +13,22 @@
 
 .fab {
   position: absolute;
-  top: 1.6rem;
-  left: 1.6rem;
+  bottom: 2.4rem;
+  right: 2.4rem;
   z-index: 1000;
-  width: 4.4rem;
-  height: 4.4rem;
+  width: 5.6rem; /* Slightly larger for better thumb reach */
+  height: 5.6rem;
   border-radius: 50%;
   background-color: var(--color-brand--2);
   color: var(--color-dark--0);
   border: none;
-  font-size: 2.4rem;
+  font-size: 3.2rem;
   font-weight: 700;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.4);
 }
 
 @media (min-width: 768px) {
