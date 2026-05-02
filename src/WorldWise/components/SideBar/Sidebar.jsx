@@ -13,7 +13,7 @@ import { useEffect } from "react";
 import Spinner from "../../../assets/Spinner";
 import styles from "./Sidebar.module.css";
 
-function Sidebar() {
+function Sidebar({ isOpen }) {
   const [searchParams] = useSearchParams();
   const cities = useSelector(selectCities);
   const cityLoading = useSelector(selectCitiesLoading);
@@ -27,7 +27,7 @@ function Sidebar() {
   }, [dispatch]);
 
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`${styles.sidebar} ${isOpen ? styles.sidebarOpen : ""}`}>
       <div className={styles.logoTab}>
         <Logo />
         <Tabs />

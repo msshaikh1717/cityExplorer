@@ -3,29 +3,44 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  padding: 0 2.4rem;
 }
 
 .form {
-  width: 40rem;
-  max-width: 100%;
+  width: 100%;
+  max-width: 40rem;
 }
 
 .label {
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-weight: 600;
-  height: 5rem;
+  height: auto;
+  margin-bottom: 0.8rem;
   width: 100%;
 }
 
+@media (min-width: 768px) {
+  .label {
+    font-size: 3rem;
+  }
+}
+
 .input {
-  margin-bottom: 4rem;
+  margin-bottom: 3.2rem;
   height: 5rem;
   width: 100%;
-  font-size: 2.4rem;
-  padding: 0 1rem;
+  font-size: 1.6rem; /* Ensures no auto-zoom on iOS */
+  padding: 0 1.2rem;
   border-radius: 0.8rem;
   border: none;
   background-color: var(--color-light--2);
+}
+
+@media (min-width: 768px) {
+  .input {
+    margin-bottom: 4rem;
+    font-size: 2.4rem;
+  }
 }
 
 .button {

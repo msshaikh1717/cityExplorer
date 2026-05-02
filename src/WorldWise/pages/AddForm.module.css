@@ -22,11 +22,27 @@
 .input {
   height: 4.4rem;
   width: 100%;
-  font-size: 1.6rem;
+  font-size: 1.6rem; /* Ensures no auto-zoom on iOS (>= 16px) */
   padding: 0.8rem 1.2rem;
   border-radius: 0.8rem;
   border: none;
   background-color: var(--color-light--2);
+}
+
+/* Datepicker specific mobile styling */
+:global(.react-datepicker-popper) {
+  z-index: 1001 !important;
+}
+
+@media (max-width: 767px) {
+  :global(.react-datepicker) {
+    font-size: 1.2rem !important;
+  }
+  :global(.react-datepicker__day-name), :global(.react-datepicker__day), :global(.react-datepicker__time-name) {
+    width: 3.2rem !important;
+    line-height: 3.2rem !important;
+    margin: 0.2rem !important;
+  }
 }
 
 .buttons {

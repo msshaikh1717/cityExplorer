@@ -33,15 +33,26 @@ function LocationMarker({ dispatch, navigate }) {
 }
 
 // sync map with current position
-function SyncMapLocation({ position }) {
+function SyncMapLocation({ position, isSidebarOpen }) {
   const map = useMap();
 
   useEffect(() => {
     map.flyTo(position, 4);
   }, [position, map]);
+
+  // Fix Leaflet's grey tiles when sidebar toggles on mobile
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      map.invalidateSize();
+    }, 400); // Wait for transition (300ms) + buffer
+
+    return () => clearTimeout(timer);
+  }, [isSidebarOpen, map]);
+
+  return null;
 }
 
-function Map() {
+function Map({ isSidebarOpen, onToggleSidebar }) {
   const position = useSelector(selectPosition);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -68,6 +79,11 @@ function Map() {
 
   return (
     <div className={styles.mapContainer}>
+      {/* FAB Toggle for Mobile */}
+      <button className={styles.fab} onClick={onToggleSidebar}>
+        {isSidebarOpen ? "✕" : "☰"}
+      </button>
+
       <div className={styles.userStatus}>
         <img
           className={styles.avatar}
@@ -113,7 +129,7 @@ function Map() {
             </Popup>
           </Marker>
         ))}
-        <SyncMapLocation position={position} />
+        <SyncMapLocation position={position} isSidebarOpen={isSidebarOpen} />
         <LocationMarker dispatch={dispatch} navigate={navigate} />
       </MapContainer>
 

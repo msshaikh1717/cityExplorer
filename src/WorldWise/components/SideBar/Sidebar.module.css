@@ -5,6 +5,30 @@
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+
+  /* Mobile overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebarOpen {
+  transform: translateX(0);
+}
+
+/* Tablet & Desktop */
+@media (min-width: 768px) {
+  .sidebar {
+    position: static;
+    transform: none;
+    width: auto;
+    z-index: auto;
+    transition: none;
+  }
 }
 
 .logoTab {
