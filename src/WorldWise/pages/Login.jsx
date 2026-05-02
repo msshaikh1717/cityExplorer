@@ -40,33 +40,35 @@ function Login() {
 
   return (
     <main className={styles.login}>
-      {authError && <h4 className={styles.error}>{authError}</h4>}
-      {authLoading && !authError && <Spinner />}
+      {authLoading ? (
+        <Spinner />
+      ) : (
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+          {authError && <h4 className={styles.error}>{authError}</h4>}
+          <div className={styles.row}>
+            <p className={styles.label}>Email address</p>
+            <input
+              className={styles.input}
+              defaultValue="udemy3@example.com"
+              {...register("email")}
+            />
+          </div>
 
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        <div className={styles.row}>
-          <p className={styles.label}>Email address</p>
-          <input
-            className={styles.input}
-            defaultValue="udemy3@example.com"
-            {...register("email")}
-          />
-        </div>
+          <div className={styles.row}>
+            <p className={styles.label}>Password</p>
+            <input
+              className={styles.input}
+              type="password"
+              defaultValue="udemy3"
+              {...register("password")}
+            />
+          </div>
 
-        <div className={styles.row}>
-          <p className={styles.label}>Password</p>
-          <input
-            className={styles.input}
-            type="password"
-            defaultValue="udemy3"
-            {...register("password")}
-          />
-        </div>
-
-        <div>
-          <button className={styles.button}>LOGIN</button>
-        </div>
-      </form>
+          <div>
+            <button className={styles.button}>LOGIN</button>
+          </div>
+        </form>
+      )}
     </main>
   );
 }

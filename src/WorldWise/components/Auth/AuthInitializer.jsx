@@ -39,7 +39,7 @@ function AuthInitializer({ children }) {
     });
 
     // CLeanup subscription: The subscription is unsubscribed when the component unmounts to prevent memory leaks.
-    return () => subscription.unsubscribe;
+    return () => subscription.unsubscribe();
   }, [dispatch]);
 
   return children;

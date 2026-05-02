@@ -1,19 +1,35 @@
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
-import { selectCities } from "../../features/worldWise/cityListSlice";
+import {
+  selectCities,
+  selectCitiesLoading,
+} from "../../features/worldWise/cityListSlice";
 import { format } from "date-fns";
 import { Flag } from "../components/Flag";
+import Spinner from "../components/Spinner";
 
 function CityDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
 
   const cities = useSelector(selectCities);
-  const selectedCity = cities.find((city) => city.id.toString() === id); //id might contain letters so conv id to number might give error
+  const isLoading = useSelector(selectCitiesLoading);
+  const selectedCity = cities.find((city) => city.id.toString() === id);
 
-  const formattedDate = selectedCity
-    ? format(new Date(selectedCity?.date), "eeee, MMMM dd, yyyy")
-    : "";
+  if (isLoading) return <Spinner />;
+
+  if (!selectedCity) {
+    return (
+      <div style={{ textAlign: "center", marginTop: "10rem" }}>
+        <h3>City not found</h3>
+        <button onClick={() => navigate("/app/cities")}>Back to cities</button>
+      </div>
+    );
+  }
+
+  const formattedDate = selectedCity?.date
+    ? format(new Date(selectedCity.date), "eeee, MMMM dd, yyyy")
+    : "Date unknown";
 
   return (
     <div
@@ -33,16 +49,16 @@ function CityDetails() {
         </p>
 
         <span>
-          <Flag value={selectedCity?.emoji} />
+          <Flag value={selectedCity.emoji} />
           <h3 style={{ padding: "0 2rem", display: "inline" }}>
-            {selectedCity?.cityName}
+            {selectedCity.cityName || selectedCity.city_name}
           </h3>
         </span>
       </div>
       <div className="went-to">
-        <p
-          style={{ fontSize: "1.5rem", fontWeight: 700, color: "#aaa" }}
-        >{`YOU WENT TO ${selectedCity?.city_name.toUpperCase()} ON`}</p>
+        <p style={{ fontSize: "1.5rem", fontWeight: 700, color: "#aaa" }}>
+          {`YOU WENT TO ${(selectedCity.city_name || selectedCity.cityName || "THIS CITY").toUpperCase()} ON`}
+        </p>
         <p style={{ fontSize: "1.5rem" }}>{formattedDate}</p>
       </div>
 

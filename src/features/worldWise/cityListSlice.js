@@ -18,15 +18,13 @@ export const fetchCities = createAsyncThunk(
 
 export const createCity = createAsyncThunk(
   "cityList/createCity",
-  async (newCity, { rejectWithValue }) => {
-    // Get the current user (async)
-    const {
-      data: { user },
-      error: userError,
-    } = await supabase.auth.getUser();
+  async (newCity, { getState, rejectWithValue }) => {
+    // 1. Get the current user from Redux state instead of extra network request
+    const { auth } = getState();
+    const user = auth.user;
 
-    if (userError || !user) {
-      return rejectWithValue(userError?.message || "Not authenticated");
+    if (!user) {
+      return rejectWithValue("Not authenticated");
     }
     // 2. Prepare the city object with user_id
     const cityToInsert = {
@@ -126,6 +124,12 @@ export const cityListSlice = createSlice({
       .addCase(removeCity.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = action.payload || "Failed to remove city";
+      })
+      // Clear state on logout to prevent data leak
+      .addCase("auth/clearSession", (state) => {
+        state.cities = [];
+        state.isLoading = false;
+        state.isError = null;
       });
   },
 });
