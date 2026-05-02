@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-// import { setLogData } from "../../features/worldWise/logDataSlice";
 import {
   loginUser,
   selectAuthError,
@@ -10,6 +9,7 @@ import { useNavigate } from "react-router";
 import Spinner from "../components/Spinner";
 import { useEffect } from "react";
 import { supabase } from "../lib/supabaseClient";
+import styles from "./Login.module.css";
 
 function Login() {
   const dispatch = useDispatch();
@@ -24,101 +24,50 @@ function Login() {
 
   const onSubmit = async (data) => {
     try {
-      const newData = await dispatch(loginUser(data)).unwrap();
-
+      await dispatch(loginUser(data)).unwrap();
       navigate("/app/cities");
     } catch (error) {
       console.error(error, "<== error");
     }
   };
 
-  //useEffect for checking if user has logged in b4 with localStorage
   useEffect(() => {
     async function checkPrevLogin() {
-      const { data, error } = await supabase.auth.getSession();
+      await supabase.auth.getSession();
     }
     checkPrevLogin();
   }, []);
 
   return (
-    <>
-      {authError && (
-        <h4 style={{ color: "red", textAlign: "center" }}>{authError}</h4>
-      )}
+    <main className={styles.login}>
+      {authError && <h4 className={styles.error}>{authError}</h4>}
       {authLoading && !authError && <Spinner />}
-      <div
-        className="login"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100%",
-        }}
-      >
-        <form
-          action="/login"
-          method="post"
-          onSubmit={handleSubmit(onSubmit)}
-          style={{ width: "40rem" }}
-        >
-          <p
-            style={{
-              fontSize: "3rem",
-              fontWeight: 600,
-              height: "5rem",
-              width: "40rem",
-            }}
-          >
-            Email address
-          </p>
+
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <div className={styles.row}>
+          <p className={styles.label}>Email address</p>
           <input
+            className={styles.input}
             defaultValue="udemy3@example.com"
             {...register("email")}
-            style={{
-              marginBottom: "4rem",
-              height: "5rem",
-              width: "40rem",
-              fontSize: "2.5rem",
-            }}
           />
+        </div>
 
-          <p
-            style={{
-              fontSize: "3rem",
-              fontWeight: 600,
-              height: "5rem",
-              width: "40rem",
-            }}
-          >
-            Password
-          </p>
+        <div className={styles.row}>
+          <p className={styles.label}>Password</p>
           <input
+            className={styles.input}
+            type="password"
             defaultValue="udemy3"
             {...register("password")}
-            style={{
-              marginBottom: "4rem",
-              height: "5rem",
-              width: "40rem",
-              fontSize: "2.5rem",
-            }}
           />
-          <button
-            style={{
-              height: "5rem",
+        </div>
 
-              background: "#00c46a",
-              borderRadius: "1rem",
-              padding: "0 2rem",
-              fontSize: "2rem",
-              fontWeight: "600",
-              cursor: "pointer",
-            }}
-          >
-            LOGIN
-          </button>
-        </form>
-      </div>
-    </>
+        <div>
+          <button className={styles.button}>LOGIN</button>
+        </div>
+      </form>
+    </main>
   );
 }
 

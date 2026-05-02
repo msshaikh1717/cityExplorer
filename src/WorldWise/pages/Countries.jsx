@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectCities } from "../../features/worldWise/cityListSlice";
 import CountryItem from "./CountryItem";
+import styles from "./Countries.module.css";
 
 function Countries() {
   const cities = useSelector(selectCities);
@@ -13,21 +14,7 @@ function Countries() {
   );
 
   return (
-    <ul
-      style={{
-        padding: "3rem",
-        margin: "5rem 0",
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "flex-start",
-        alignContent: "flex-start",
-        gap: "3rem",
-        overflowY: "auto",
-        background: "#42484d",
-        borderRadius: "2rem",
-        width: "100%",
-      }}
-    >
+    <ul className={styles.countriesList}>
       {uniqueCountries.map((country, i) => (
         <CountryItem country={country} key={i} />
       ))}

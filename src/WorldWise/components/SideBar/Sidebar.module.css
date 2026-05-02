@@ -1,0 +1,47 @@
+.sidebar {
+  background-color: var(--color-dark--1);
+  height: 100vh;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.logoTab {
+  max-height: 25%;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  margin-top: 10rem;
+  color: #ff6b6b;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.fetchError {
+  margin-top: 10rem;
+  color: #6bfff8;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.empty {
+  margin-top: 10rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.footer {
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--color-light--1);
+  margin-top: auto;
+}

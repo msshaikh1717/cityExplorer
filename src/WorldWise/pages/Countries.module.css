@@ -1,0 +1,14 @@
+.countriesList {
+  padding: 2.4rem;
+  margin: 4.8rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  gap: 2.4rem;
+  overflow-y: auto;
+  background-color: var(--color-dark--2);
+  border-radius: 2rem;
+  width: 100%;
+  list-style: none;
+}

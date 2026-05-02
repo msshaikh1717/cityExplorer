@@ -1,0 +1,25 @@
+.appLayout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.4rem;
+  position: relative;
+}
+
+.background {
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

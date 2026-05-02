@@ -1,0 +1,6 @@
+.app {
+  height: 100vh;
+  overscroll-behavior-y: none;
+  display: grid;
+  grid-template-columns: 40rem 1fr;
+}

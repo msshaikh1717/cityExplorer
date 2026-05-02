@@ -1,16 +1,11 @@
 import { Outlet } from "react-router";
 import Sidebar from "../components/SideBar/Sidebar";
 import Map from "../components/Map/Map";
+import styles from "./AppLoggedIn.module.css";
 
 function AppLoggedIn() {
   return (
-    <div
-      className="app"
-      style={{
-        display: "grid",
-        gridTemplateColumns: "40rem 1fr",
-      }}
-    >
+    <div className={styles.app}>
       <Sidebar />
       <Map />
     </div>

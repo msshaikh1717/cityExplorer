@@ -1,0 +1,61 @@
+.form {
+  padding: 3rem;
+  background-color: var(--color-dark--0);
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 0;
+  gap: 1.6rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.label {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.input {
+  height: 4.4rem;
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.8rem;
+  border: none;
+  background-color: var(--color-light--2);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+
+.btn {
+  padding: 1rem 2.4rem;
+  border-radius: 1rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnAdd {
+  background-color: var(--color-brand--2);
+  color: var(--color-dark--0);
+}
+
+.btnBack {
+  background-color: transparent;
+  border: 1px solid var(--color-light--1);
+  color: var(--color-light--1);
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}

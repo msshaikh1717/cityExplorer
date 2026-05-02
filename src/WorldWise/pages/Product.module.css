@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  width: 70%;
+  height: 100%;
+  margin: auto;
+}
+
+.img {
+  height: 40rem;
+  width: 40rem;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Better for text alignment than center */
+  gap: 2rem;
+  flex: 1;
+}
+
+.heading {
+  font-size: 3.6rem;
+  line-height: 1.2;
+}
+
+.text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}

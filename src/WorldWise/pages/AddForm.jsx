@@ -13,6 +13,7 @@ import {
 import { createCity } from "../../features/worldWise/cityListSlice";
 import { Flag } from "../components/Flag";
 import { format } from "date-fns";
+import styles from "./AddForm.module.css";
 
 function AddForm() {
   const [searchParams] = useSearchParams();
@@ -47,7 +48,6 @@ function AddForm() {
     navigate("/app/cities");
   }
 
-  // api call to convert lat,lng to cityName from url
   useEffect(() => {
     async function fetchCityData() {
       if (!lat || !lng) return;
@@ -76,83 +76,59 @@ function AddForm() {
   }, [searchParams, lat, lng, setValue, dispatch]);
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      style={{
-        padding: "3rem",
-        background: "#242a2e",
-        borderRadius: "2rem",
-        display: "flex",
-        justifyContent: "space-between",
-        flexDirection: "column",
-        margin: "3rem 0",
-        gap: "1rem",
-      }}
-      className="sidebar__add-form"
-    >
-      <p style={{ fontSize: "2.5rem" }}>
-        City Name:
-        <span style={{ padding: "0rem 2rem" }}>
-          <Flag value={clickedCityObj?.countryCode} />
-        </span>
-      </p>
-      <input
-        style={{ height: "4rem", width: "100%" }}
-        defaultValue={clickedCityObj.city}
-        {...register("cityName")}
-      />
-      <p style={{ fontSize: "2.5rem" }}>
-        When did you go to {clickedCityObj.city}?
-      </p>
-      {/* DATE PICKER with react-hook-form */}
-      <Controller
-        name="date"
-        control={control}
-        defaultValue={new Date()} // Initial value
-        render={({ field }) => (
-          <DatePicker
-            selected={field.value}
-            onChange={(date) => field.onChange(date)}
-            customInput={
-              <input
-                style={{
-                  height: "4rem",
-                  width: "100%",
-                  fontSize: "1.6rem",
-                  padding: "0.5rem",
-                }}
-              />
-            }
-          />
-        )}
-      />
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+      <div className={styles.row}>
+        <label className={styles.label}>
+          City Name
+          <span style={{ padding: "0 2rem" }}>
+            <Flag value={clickedCityObj?.countryCode} />
+          </span>
+        </label>
+        <input
+          className={styles.input}
+          defaultValue={clickedCityObj.city}
+          {...register("cityName")}
+        />
+      </div>
 
-      <p style={{ fontSize: "2.5rem" }}>
-        Notes about your trip to {clickedCityObj.city}
-      </p>
-      <input
-        style={{ height: "4rem", width: "100%" }}
-        defaultValue=""
-        {...register("notes", { required: true })}
-      />
-      <div
-        className="addform__btns"
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <button
-          style={{ padding: "0.75rem 0", width: "6rem", borderRadius: "1rem" }}
-          disabled={isLoading}
-        >
-          {isLoading ? "Loading city name..." : "Add"}
+      <div className={styles.row}>
+        <label className={styles.label}>
+          When did you go to {clickedCityObj.city}?
+        </label>
+        <Controller
+          name="date"
+          control={control}
+          defaultValue={new Date()}
+          render={({ field }) => (
+            <DatePicker
+              selected={field.value}
+              onChange={(date) => field.onChange(date)}
+              customInput={<input className={styles.input} />}
+            />
+          )}
+        />
+      </div>
+
+      <div className={styles.row}>
+        <label className={styles.label}>
+          Notes about your trip to {clickedCityObj.city}
+        </label>
+        <textarea
+          className={styles.input}
+          style={{ height: "10rem", resize: "none" }}
+          defaultValue=""
+          {...register("notes", { required: true })}
+        />
+      </div>
+
+      <div className={styles.buttons}>
+        <button className={`${styles.btn} ${styles.btnAdd}`} disabled={isLoading}>
+          {isLoading ? "Loading..." : "Add"}
         </button>
 
         <button
           type="button"
-          style={{ padding: "0.75rem 0", width: "6rem", borderRadius: "1rem" }}
+          className={`${styles.btn} ${styles.btnBack}`}
           onClick={() => navigate("/app/cities")}
         >
           Back
