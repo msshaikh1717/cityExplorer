@@ -1,0 +1,14 @@
+.cities {
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  background-color: var(--color-dark--2);
+  border-radius: 1.2rem;
+  width: 100%;
+}
+
+/* On mobile/tablet where sidebar might be taller or detail view active */
+.fullHeight {
+  height: 100%;
+}

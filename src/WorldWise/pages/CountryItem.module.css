@@ -1,0 +1,17 @@
+.countryItem {
+  width: 100%;
+  background-color: var(--color-dark--0);
+  border-left: 5px solid var(--color-brand--1);
+  height: 8rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem 2rem;
+}
+
+.countryName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-light--3);
+}

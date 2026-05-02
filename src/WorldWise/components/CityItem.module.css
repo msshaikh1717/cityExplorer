@@ -1,12 +1,89 @@
+.cityItem {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem 1.6rem;
+  background-color: var(--color-dark--0);
+  border: 1px solid var(--color-brand--2);
+  border-left: 5px solid var(--color-brand--2);
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  min-height: 6rem;
+}
+
+.cityItem:hover {
+  transform: translateX(0.4rem);
+}
+
+.cityName {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-light--3);
+  margin-right: auto;
+  line-height: 1.2;
+  min-width: 0; /* Critical for truncation/shrink */
+}
+
+.date {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-light--1);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 0.8rem; /* Tighter for mobile/tablet */
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .cityName {
+    font-size: 1.3rem; /* Slightly smaller to fit more */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .cityItem {
+    gap: 0.8rem; /* Reduce gap on tablet to save space */
+    padding: 1rem 1.2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Common for tablet and desktop if not overridden */
+  .cityName {
+    /* Keep flexible unless in tablet range above */
+  }
+}
+
+@media (min-width: 992px) {
+  .cityName {
+    font-size: 1.6rem;
+    white-space: normal; /* No truncation on desktop */
+    overflow: visible;
+  }
+  .date {
+    font-size: 1.4rem;
+    margin-right: 1.2rem;
+  }
+  .cityItem {
+    gap: 1.2rem;
+    padding: 1rem 1.6rem;
+  }
+}
+
 .deleteBtn {
-  height: 2rem;
+  flex-shrink: 0;
+  height: 2.4rem;
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
   background-color: var(--color-dark--1);
   color: var(--color-light--2);
-  font-size: 1.6rem;
-  font-weight: 400;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   transition: all 0.2s;
 }
