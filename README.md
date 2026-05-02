@@ -11,6 +11,8 @@ A full-stack travel tracking app where users can log cities they've visited on a
 ![WorldWise Screenshot 1](./screenshots/screenshot-1.png)
 ![WorldWise Screenshot 2](./screenshots/screenshot-2.png)
 ![WorldWise Screenshot 3](./screenshots/screenshot-3.png)
+![WorldWise Screenshot 4](./screenshots/screenshot-4.png)
+![WorldWise Screenshot 5](./screenshots/screenshot-5.png)
 
 ---
 
