@@ -6,19 +6,19 @@ import styles from "./AppLoggedIn.module.css";
 
 function AppLoggedIn() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
 
   function toggleSidebar() {
     setIsSidebarOpen((open) => !open);
   }
 
-  // Auto-open sidebar on mobile when navigating to the form
+  // Auto-open sidebar on mobile when navigating to the form (or updating search params on map click)
   useEffect(() => {
     const isMobile = window.matchMedia("(max-width: 767px)").matches;
     if (isMobile && pathname.includes("/form")) {
       setIsSidebarOpen(true);
     }
-  }, [pathname]);
+  }, [pathname, search]);
 
   return (
     <div className={styles.app}>
