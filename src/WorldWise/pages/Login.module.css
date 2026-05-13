@@ -1,62 +1,82 @@
 .login {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  padding: 0 2.4rem;
+  min-height: 100vh;
+  padding: 2.4rem;
+  gap: 2rem;
 }
 
-.form {
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
   width: 100%;
-  max-width: 40rem;
+  max-width: 120rem;
+  justify-content: center;
+  align-items: center;
 }
 
-.label {
-  font-size: 2.4rem;
-  font-weight: 600;
-  height: auto;
-  margin-bottom: 0.8rem;
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .label {
-    font-size: 3rem;
+/* Desktop only: side-by-side */
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    align-items: stretch;
   }
 }
 
-.input {
-  margin-bottom: 3.2rem;
-  height: 5rem;
+.form {
+  background-color: var(--color-dark--1);
+  padding: 2.4rem;
+  border-radius: 1rem;
   width: 100%;
-  font-size: 1.6rem; /* Ensures no auto-zoom on iOS */
-  padding: 0 1.2rem;
-  border-radius: 0.8rem;
-  border: none;
-  background-color: var(--color-light--2);
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (min-width: 768px) {
-  .input {
-    margin-bottom: 4rem;
+.label {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+/* Increase font size only on Desktop */
+@media (min-width: 1024px) {
+  .label {
     font-size: 2.4rem;
   }
 }
 
+.input {
+  margin-bottom: 2.4rem;
+  height: 4.5rem;
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 0 1.2rem;
+  border-radius: 0.8rem;
+  border: none;
+  background-color: var(--color-light--2);
+  color: var(--color-dark--0);
+}
+
 .button {
+  width: 100%;
   height: 5rem;
   background-color: var(--color-brand--2);
   border-radius: 1rem;
-  padding: 0 2.4rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 600;
   cursor: pointer;
   border: none;
   color: var(--color-dark--0);
+  margin-top: auto;
 }
 
 .error {
   color: #ff6b6b;
   text-align: center;
   font-size: 1.8rem;
+  grid-column: 1 / -1;
 }

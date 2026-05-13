@@ -63,6 +63,7 @@ function Map({ isSidebarOpen, onToggleSidebar }) {
   } = useLocation();
   const cities = useSelector(selectCities);
   const user = useSelector(selectUser);
+  const displayName = user?.email?.split("@")[0] || "User";
 
   const [searchParams] = useSearchParams();
   useEffect(() => {
@@ -88,9 +89,9 @@ function Map({ isSidebarOpen, onToggleSidebar }) {
         <img
           className={styles.avatar}
           alt="profPic"
-          src={`https://i.pravatar.cc/100?u=${user.id}`}
+          src={`https://i.pravatar.cc/100?u=${user?.id}`}
         />
-        <p className={styles.userName}>Welcome, {"Jack"}</p>
+        <p className={styles.userName}>Welcome, {displayName}</p>
         <button
           className={styles.logoutBtn}
           onClick={async () => {

@@ -8,17 +8,44 @@ import {
 import { useNavigate } from "react-router";
 import Spinner from "../components/Spinner";
 import { useEffect } from "react";
-import { supabase } from "../lib/supabaseClient";
+// ... existing code
 import styles from "./Login.module.css";
+import { supabase } from "../lib/supabaseClient";
+
+function LoginForm({ defaultEmail, defaultPassword, onSubmit }) {
+  const { register, handleSubmit } = useForm();
+
+  return (
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+      <div className={styles.row}>
+        <p className={styles.label}>Email address</p>
+        <input
+          className={styles.input}
+          defaultValue={defaultEmail}
+          {...register("email")}
+        />
+      </div>
+
+      <div className={styles.row}>
+        <p className={styles.label}>Password</p>
+        <input
+          className={styles.input}
+          type="password"
+          defaultValue={defaultPassword}
+          {...register("password")}
+        />
+      </div>
+
+      <div>
+        <button className={styles.button}>Login with this User</button>
+      </div>
+    </form>
+  );
+}
 
 function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
   const authLoading = useSelector(selectAuthLoading);
   const authError = useSelector(selectAuthError);
 
@@ -38,37 +65,23 @@ function Login() {
     checkPrevLogin();
   }, []);
 
+  if (authLoading) return <Spinner />;
+
   return (
     <main className={styles.login}>
-      {authLoading ? (
-        <Spinner />
-      ) : (
-        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-          {authError && <h4 className={styles.error}>{authError}</h4>}
-          <div className={styles.row}>
-            <p className={styles.label}>Email address</p>
-            <input
-              className={styles.input}
-              defaultValue="udemy3@example.com"
-              {...register("email")}
-            />
-          </div>
-
-          <div className={styles.row}>
-            <p className={styles.label}>Password</p>
-            <input
-              className={styles.input}
-              type="password"
-              defaultValue="udemy3"
-              {...register("password")}
-            />
-          </div>
-
-          <div>
-            <button className={styles.button}>LOGIN</button>
-          </div>
-        </form>
-      )}
+      {authError && <h4 className={styles.error}>{authError}</h4>}
+      <div className={styles.container}>
+        <LoginForm
+          defaultEmail="udemy3@example.com"
+          defaultPassword="udemy3"
+          onSubmit={onSubmit}
+        />
+        <LoginForm
+          defaultEmail="mss@example.com"
+          defaultPassword="mss"
+          onSubmit={onSubmit}
+        />
+      </div>
     </main>
   );
 }
