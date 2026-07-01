@@ -1,18 +1,18 @@
-# WorldWise – Travel Tracking App
+# cityExplorer – Travel Tracking App
 
 A full-stack travel tracking app where users can log cities they've visited on an interactive world map. Built with React + Vite on the frontend and Supabase as the backend.
 
-**Live:** https://udemy3.netlify.app
+**Live:** https://cityexplorermss.netlify.app/
 
 ---
 
 ## Screenshots
 
-![WorldWise Screenshot 1](./screenshots/screenshot-1.png)
-![WorldWise Screenshot 2](./screenshots/screenshot-2.png)
-![WorldWise Screenshot 3](./screenshots/screenshot-3.png)
-![WorldWise Screenshot 4](./screenshots/screenshot-4.png)
-![WorldWise Screenshot 5](./screenshots/screenshot-5.png)
+![cityExplorer Screenshot 1](./screenshots/screenshot-1.png)
+![cityExplorer Screenshot 2](./screenshots/screenshot-2.png)
+![cityExplorer Screenshot 3](./screenshots/screenshot-3.png)
+![cityExplorer Screenshot 4](./screenshots/screenshot-4.png)
+![cityExplorer Screenshot 5](./screenshots/screenshot-5.png)
 
 ---
 
