@@ -15,7 +15,7 @@ export const store = configureStore({
     quiz: quizReducer,
     bank: bankReducer,
 
-    // WorldWise App
+    // cityExplorer App
     currPosition: currPositionReducer,
     cityList: cityListReducer,
     // logData: logDataReducer, //Temp slice to be replaced with supabase

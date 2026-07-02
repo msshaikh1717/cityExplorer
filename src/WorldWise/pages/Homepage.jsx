@@ -9,7 +9,7 @@ function Homepage() {
       <h1 className={styles.headingPrimary}>
         You travel the world.
         <br />
-        WorldWise keeps track of your adventures.
+        CityExplorer keeps track of your adventures.
       </h1>
       <h2 className={styles.headingSecondary}>
         A world map that tracks your footsteps into every city you can think of.

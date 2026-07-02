@@ -6,7 +6,7 @@ function Header() {
     <header className={styles.header}>
       <NavLink to="/" className={styles.logoContainer}>
         <img src="/icon.png" className={styles.logo} alt="WorldWise Logo" />
-        <h1 className={styles.title}>WorldWise</h1>
+        <h1 className={styles.title}>CityExplorer</h1>
       </NavLink>
 
       <nav className={styles.nav}>

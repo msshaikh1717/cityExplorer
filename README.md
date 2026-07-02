@@ -80,7 +80,7 @@ npm install
 npm run dev
 ```
 
-The WorldWise app entry point is `src/WorldWise/AppWorldWise.jsx`. The repo also contains other standalone React practice apps (`AppAtomicBlog`, `AppReactQuiz`, `AppBankAccChallenge`, `AppDateCounter`) built during the same learning period.
+The cityExplorer app entry point is `src/WorldWise/AppWorldWise.jsx`. The repo also contains other standalone React practice apps (`AppAtomicBlog`, `AppReactQuiz`, `AppBankAccChallenge`, `AppDateCounter`) built during the same learning period.
 
 ### Supabase Setup
 
