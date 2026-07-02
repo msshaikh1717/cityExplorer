@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectCities } from "../../features/worldWise/cityListSlice";
+import { selectCities } from "../../features/cityExplorer/cityListSlice";
 import CityItem from "../components/CityItem";
 
 function CityLists() {

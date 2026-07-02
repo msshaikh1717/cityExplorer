@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { Link } from "react-router";
 import { Flag } from "./Flag";
-import { removeCity } from "../../features/worldWise/cityListSlice";
+import { removeCity } from "../../features/cityExplorer/cityListSlice";
 
 import styles from "./CityItem.module.css";
 

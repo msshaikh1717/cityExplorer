@@ -9,13 +9,13 @@ import { useLocation } from "../../../hooks/useLocation";
 import {
   selectPosition,
   setPosition,
-} from "../../../features/worldWise/currPositionSlice";
-import { selectCities } from "../../../features/worldWise/cityListSlice";
+} from "../../../features/cityExplorer/currPositionSlice";
+import { selectCities } from "../../../features/cityExplorer/cityListSlice";
 import { Flag } from "../Flag";
 import {
   clearSession,
   selectUser,
-} from "../../../features/worldWise/authSlice";
+} from "../../../features/cityExplorer/authSlice";
 import { supabase } from "../../lib/supabaseClient";
 import styles from "./Map.module.css";
 

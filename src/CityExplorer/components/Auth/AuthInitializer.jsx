@@ -9,7 +9,7 @@ import {
   clearSession,
   setInitialized,
   setSession,
-} from "../../../features/worldWise/authSlice";
+} from "../../../features/cityExplorer/authSlice";
 
 function AuthInitializer({ children }) {
   const dispatch = useDispatch();

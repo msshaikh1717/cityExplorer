@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { supabase } from "../../WorldWise/lib/supabaseClient";
+import { supabase } from "../../CityExplorer/lib/supabaseClient";
 
 // Old code which uses json server
 // const BASE_URL = "http://localhost:9000";

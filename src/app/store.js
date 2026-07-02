@@ -2,12 +2,12 @@ import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "../features/counter/counterSlice";
 import quizReducer from "../features/quiz/quizSlice";
 import bankReducer from "../features/bankAccount/bankSlice";
-// import logDataReducer from "../features/worldWise/logDataSlice";
-import currPositionReducer from "../features/worldWise/currPositionSlice";
-import cityListReducer from "../features/worldWise/cityListSlice";
+// import logDataReducer from "../features/cityExplorer/logDataSlice";
+import currPositionReducer from "../features/cityExplorer/currPositionSlice";
+import cityListReducer from "../features/cityExplorer/cityListSlice";
 import queryReducer from "../features/atomicBlog/querySlice";
 import postsReducer from "../features/atomicBlog/postsSlice";
-import authReducer from "../features/worldWise/authSlice";
+import authReducer from "../features/cityExplorer/authSlice";
 
 export const store = configureStore({
   reducer: {

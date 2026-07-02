@@ -1,7 +1,7 @@
 // authSlice – The Redux Auth State Manager: This slice is the single source of truth for authentication data in your app.
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { supabase } from "../../WorldWise/lib/supabaseClient";
+import { supabase } from "../../CityExplorer/lib/supabaseClient";
 
 export const loginUser = createAsyncThunk(
   "authSlice/loginUser",

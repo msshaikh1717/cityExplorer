@@ -16,7 +16,7 @@ import ProtectedRoute from "./components/Auth/ProtectedRoute";
 
 import "./index.css";
 
-function AppWorldWise() {
+function AppCityExplorer() {
   return (
     <BrowserRouter>
       <AuthInitializer>
@@ -51,4 +51,4 @@ function AppWorldWise() {
   );
 }
 
-export default AppWorldWise;
+export default AppCityExplorer;

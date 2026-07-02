@@ -7,8 +7,8 @@ import {
   selectCities,
   selectCitiesError,
   selectCitiesLoading,
-} from "../../../features/worldWise/cityListSlice";
-import { selectMapError } from "../../../features/worldWise/currPositionSlice";
+} from "../../../features/cityExplorer/cityListSlice";
+import { selectMapError } from "../../../features/cityExplorer/currPositionSlice";
 import { useEffect } from "react";
 import Spinner from "../../../assets/Spinner";
 import styles from "./Sidebar.module.css";
@@ -60,7 +60,7 @@ function Sidebar({ isOpen }) {
 
       <footer className={styles.footer}>
         <p className={styles.copyright}>
-          &copy; Copyright {new Date().getFullYear()} by WorldWise Inc.
+          &copy; Copyright {new Date().getFullYear()} by CityExplorer Inc.
         </p>
       </footer>
     </aside>

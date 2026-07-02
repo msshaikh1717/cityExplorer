@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import {
   selectIsAuthenticated,
   selectIsInitialized,
-} from "../../../features/worldWise/authSlice";
+} from "../../../features/cityExplorer/authSlice";
 import { Navigate, Outlet } from "react-router";
 import SpinnerFullPage from "../SpinnerFullPage";
 

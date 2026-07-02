@@ -1,5 +1,5 @@
 {
-  "name": "udemy-part3",
+  "name": "city-explorer",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "json-server --watch src/ReactQuiz/data/questions.json --port 9000",
-    "cityserver": "json-server --watch src/WorldWise/data/cities.json --port 9000"
+    "cityserver": "json-server --watch src/CityExplorer/data/cities.json --port 9000"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",

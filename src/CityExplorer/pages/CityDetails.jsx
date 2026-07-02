@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router";
 import {
   selectCities,
   selectCitiesLoading,
-} from "../../features/worldWise/cityListSlice";
+} from "../../features/cityExplorer/cityListSlice";
 import { format } from "date-fns";
 import { Flag } from "../components/Flag";
 import Spinner from "../components/Spinner";
@@ -74,7 +74,7 @@ function CityDetails() {
           LEARN MORE
         </p>
         <a
-          style={{ color: "#ffb545", fontSize: "1.5rem" }}
+          style={{ color: "var(--color-brand--1)", fontSize: "1.5rem" }}
           href={`https://en.wikipedia.org/wiki/${selectedCity?.cityName}`}
         >{`Check out ${selectedCity?.cityName} on Wikipedia →`}</a>
       </div>

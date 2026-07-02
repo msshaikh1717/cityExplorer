@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router";
-import { setMapError } from "../../../features/worldWise/currPositionSlice";
+import { setMapError } from "../../../features/cityExplorer/currPositionSlice";
 import styles from "./Tabs.module.css";
 
 function Tabs() {

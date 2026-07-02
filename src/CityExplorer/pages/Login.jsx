@@ -4,7 +4,7 @@ import {
   loginUser,
   selectAuthError,
   selectAuthLoading,
-} from "../../features/worldWise/authSlice";
+} from "../../features/cityExplorer/authSlice";
 import { useNavigate } from "react-router";
 import Spinner from "../components/Spinner";
 import { useEffect } from "react";
@@ -72,8 +72,8 @@ function Login() {
       {authError && <h4 className={styles.error}>{authError}</h4>}
       <div className={styles.container}>
         <LoginForm
-          defaultEmail="udemy3@example.com"
-          defaultPassword="udemy3"
+          defaultEmail="explorer@example.com"
+          defaultPassword="explorer123"
           onSubmit={onSubmit}
         />
         <LoginForm

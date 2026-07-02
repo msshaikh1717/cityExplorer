@@ -3,9 +3,9 @@ import styles from "./Product.module.css";
 function Product() {
   return (
     <main className={styles.container}>
-      <img src="/img-1.jpg" className={styles.img} alt="WorldWide app screenshot" />
+      <img src="/img-1.jpg" className={styles.img} alt="CityExplorer app screenshot" />
       <div className={styles.description}>
-        <h1 className={styles.heading}>About WorldWide</h1>
+        <h1 className={styles.heading}>About CityExplorer</h1>
         <p className={styles.text}>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae
           facilis, blanditiis deserunt natus error assumenda id neque porro

@@ -74,13 +74,13 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ### Install and Run
 
 ```bash
-git clone https://github.com/msshaikh1717/udemy-part-3
-cd udemy-part-3
+git clone https://github.com/msshaikh1717/cityExplorer
+cd cityExplorer
 npm install
 npm run dev
 ```
 
-The cityExplorer app entry point is `src/WorldWise/AppWorldWise.jsx`. The repo also contains other standalone React practice apps (`AppAtomicBlog`, `AppReactQuiz`, `AppBankAccChallenge`, `AppDateCounter`) built during the same learning period.
+The cityExplorer app entry point is `src/CityExplorer/AppCityExplorer.jsx`. The repo also contains other standalone React practice apps (`AppAtomicBlog`, `AppReactQuiz`, `AppBankAccChallenge`, `AppDateCounter`) built during the same learning period.
 
 ### Supabase Setup
 
@@ -97,7 +97,7 @@ src/
 ├── app/
 │   └── store.js                    # Redux store configuration
 ├── features/
-│   └── worldWise/
+│   └── cityExplorer/
 │       ├── authSlice.js            # Auth state (login, logout, session)
 │       ├── cityListSlice.js        # Cities CRUD via Supabase
 │       ├── currPositionSlice.js    # User's current geolocation
@@ -105,8 +105,8 @@ src/
 ├── hooks/
 │   ├── useLocation.js              # Browser geolocation + map fly-to
 │   └── useGetCity.js               # Fetch single city details
-└── WorldWise/
-    ├── AppWorldWise.jsx            # Root component and router setup
+└── CityExplorer/
+    ├── AppCityExplorer.jsx            # Root component and router setup
     ├── lib/
     │   └── supabaseClient.js       # Supabase client initialisation
     ├── components/

@@ -9,8 +9,8 @@ import {
   selectClickedCityObj,
   setClickedCityObj,
   setMapError,
-} from "../../features/worldWise/currPositionSlice";
-import { createCity } from "../../features/worldWise/cityListSlice";
+} from "../../features/cityExplorer/currPositionSlice";
+import { createCity } from "../../features/cityExplorer/cityListSlice";
 import { Flag } from "../components/Flag";
 import { format } from "date-fns";
 import styles from "./AddForm.module.css";
